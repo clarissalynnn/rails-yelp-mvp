@@ -1,0 +1,22 @@
+
+<div class="list-group">
+  <% @restaurants.each do |restaurant| %>
+    <a href="<%= restaurant_path(restaurant) %>" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1"><%= restaurant.name %></h5>
+          <small><%= restaurant.category %></small>
+          <small><%= link_to "Add review",  new_restaurant_review_path(restaurant)%></small>
+      </div>
+        <p class="mb-1"><%= restaurant.address %></p>
+        <p class="mb-1"><%= restaurant.phone_number %></p>
+    </a>
+  <% end %>
+</div>
+
+<!--
+<%= link_to restaurant_path(@restaurants.first) do %>
+  <div class="container h-25 border border-1">
+    <p>This is a para</p>
+  </div>
+<% end %>
+-->
